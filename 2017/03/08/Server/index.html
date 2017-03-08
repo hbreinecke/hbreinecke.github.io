@@ -5,19 +5,16 @@
   
   <title>One Minute Server Doku</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="layout:title: The Serverdate: 2017-03-07 18:59:26 
-tags: node.js server one minuteWelcome to The One Minute ServerThe IdeaThe idea is to build something with node.js. And though i am fit withdatabase">
+  <meta name="description" content="title: The One Minute Server Welcome to The One Minute ServerThe IdeaThe idea is to build something with node.js. And though i am fit withdatabase, i choosed a approach without a server-side database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="One Minute Server Doku">
 <meta property="og:url" content="http://yoursite.com/2017/03/08/Server/index.html">
 <meta property="og:site_name" content="One Minute Server Doku">
-<meta property="og:description" content="layout:title: The Serverdate: 2017-03-07 18:59:26 
-tags: node.js server one minuteWelcome to The One Minute ServerThe IdeaThe idea is to build something with node.js. And though i am fit withdatabase">
-<meta property="og:updated_time" content="2017-03-08T20:30:25.869Z">
+<meta property="og:description" content="title: The One Minute Server Welcome to The One Minute ServerThe IdeaThe idea is to build something with node.js. And though i am fit withdatabase, i choosed a approach without a server-side database">
+<meta property="og:updated_time" content="2017-03-08T20:34:56.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="One Minute Server Doku">
-<meta name="twitter:description" content="layout:title: The Serverdate: 2017-03-07 18:59:26 
-tags: node.js server one minuteWelcome to The One Minute ServerThe IdeaThe idea is to build something with node.js. And though i am fit withdatabase">
+<meta name="twitter:description" content="title: The One Minute Server Welcome to The One Minute ServerThe IdeaThe idea is to build something with node.js. And though i am fit withdatabase, i choosed a approach without a server-side database">
   
     <link rel="alternate" href="/atom.xml" title="One Minute Server Doku" type="application/atom+xml">
   
@@ -69,7 +66,7 @@ tags: node.js server one minuteWelcome to The One Minute ServerThe IdeaThe idea 
         <section id="main"><article id="post-Server" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/08/Server/" class="article-date">
-  <time datetime="2017-03-08T20:30:25.869Z" itemprop="datePublished">2017-03-08</time>
+  <time datetime="2017-03-08T20:34:56.501Z" itemprop="datePublished">2017-03-08</time>
 </a>
     
   </div>
@@ -79,8 +76,7 @@ tags: node.js server one minuteWelcome to The One Minute ServerThe IdeaThe idea 
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>layout:<br>title: The Server<br>date: 2017-03-07 18:59:26 </p>
-<h2 id="tags-node-js-server-one-minute"><a href="#tags-node-js-server-one-minute" class="headerlink" title="tags: node.js server one minute"></a>tags: node.js server one minute</h2><h1 id="Welcome-to-The-One-Minute-Server"><a href="#Welcome-to-The-One-Minute-Server" class="headerlink" title="Welcome to The One Minute Server"></a>Welcome to The One Minute Server</h1><h2 id="The-Idea"><a href="#The-Idea" class="headerlink" title="The Idea"></a>The Idea</h2><p>The idea is to build something with node.js. And though i am fit with<br>database, i choosed a approach without a server-sided database. I<br>decided to stored objects, just for one minute. What can you do with such a server ?<br>Let´s discover it.</p>
+<h2 id="title-The-One-Minute-Server"><a href="#title-The-One-Minute-Server" class="headerlink" title="title: The One Minute Server "></a>title: The One Minute Server </h2><h1 id="Welcome-to-The-One-Minute-Server"><a href="#Welcome-to-The-One-Minute-Server" class="headerlink" title="Welcome to The One Minute Server"></a>Welcome to The One Minute Server</h1><h2 id="The-Idea"><a href="#The-Idea" class="headerlink" title="The Idea"></a>The Idea</h2><p>The idea is to build something with node.js. And though i am fit with<br>database, i choosed a approach without a server-side database. I<br>decided to stored objects, just for one minute. What can you do with such a server ?<br>Let´s discover it.</p>
 <h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>You need a node-server running. And you can send Get-requests to the<br>server with objects in the url. e.g. : <a href="http://www.server.com/img/d=Base64Coded-Entity" target="_blank" rel="external">http://www.server.com/img/d=Base64Coded-Entity</a>.<br>And you can get available data from the server: <a href="http://www.server.com/getdata" target="_blank" rel="external">http://www.server.com/getdata</a></p>
 <h4 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// most important parts </span></div><div class="line"><span class="keyword">var</span> app = express(); </div><div class="line">app.locals.datastore = <span class="keyword">new</span> <span class="built_in">Array</span>(); </div><div class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>)); </div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'jade'</span>); </div><div class="line">app.use(bodyParser.json()); </div><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;)); </div><div class="line">app.use(cookieParser()); </div><div class="line">app.use(express.static(path.join(__dirname, <span class="string">'public'</span>))); </div><div class="line">app.use(express.static(path.join(__dirname, <span class="string">'applications'</span>))); </div><div class="line">app.use(<span class="string">'/'</span>, index); app.use(<span class="string">'/img'</span>, img); app.use(<span class="string">'/getdata'</span>, getdata);</div></pre></td></tr></table></figure>
 <p>Why “img” as path ? Because the first example dependes on<br>web-tracking, and it is so that you request a pixel from the server with<br>your tracking-request for most tracking solutions. So i went the same way. </p>
@@ -90,7 +86,7 @@ tags: node.js server one minuteWelcome to The One Minute ServerThe IdeaThe idea 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/08/Server/" data-id="cj01f5k440000m4pv0vw7iv8h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/08/Server/" data-id="cj01fba340000phpvd83aeeyr" class="article-share-link">Share</a>
       
       
     </footer>
