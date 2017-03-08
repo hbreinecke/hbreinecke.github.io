@@ -64,7 +64,7 @@
     <article id="post-Server" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/08/Server/" class="article-date">
-  <time datetime="2017-03-08T20:22:04.504Z" itemprop="datePublished">2017-03-08</time>
+  <time datetime="2017-03-08T20:23:29.456Z" itemprop="datePublished">2017-03-08</time>
 </a>
     
   </div>
@@ -89,26 +89,30 @@ app.use(express.static(path.join(__dirname, <span class="string">'applications'<
 app.use(<span class="string">'/'</span>, index); app.use(<span class="string">'/img'</span>, img); app.use(<span class="string">'/getdata'</span>, getdata);
 </code></pre>
 <p>Why “img” as path ? Because the first example dependes on<br>web-tracking, and it is so that you request a pixel from the server with<br>your tracking-request for most tracking solutions. So i went the same way. </p>
-<h3 id="The-Img-js"><a href="#The-Img-js" class="headerlink" title="The Img.js"></a>The Img.js</h3><p><code>Javascript var express = require(&#39;express&#39;); 
-var router = express.Router(); 
-const fs = require(&#39;fs&#39;); 
-var url = require(&#39;url&#39;);
-var image = fs.readFileSync(&#39;/var/www/html/1px.png&#39;);
-router.get(&#39;/*&#39;, function(req, res, next) {
-    var datum = new Date();
-    var currentTime = datum.getTime() ;
-    var deleteTime = currentTime + 60000;
-    res.end(image, &#39;binary&#39;);
-    var url_parts = url.parse(req.url, true);
-    var query = url_parts.query;
-    var b = new Buffer(&quot;&quot;+query.d, &#39;base64&#39;);
-    var s = b.toString();
-    var o = JSON.parse(s);
+<h3 id="The-Img-js"><a href="#The-Img-js" class="headerlink" title="The Img.js"></a>The Img.js</h3><pre><code class="Javascript"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>); 
+<span class="keyword">var</span> router = express.Router(); 
+<span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); 
+<span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);
+<span class="keyword">var</span> image = fs.readFileSync(<span class="string">'/var/www/html/1px.png'</span>);
+router.get(<span class="string">'/*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>{
+    <span class="keyword">var</span> datum = <span class="keyword">new</span> <span class="built_in">Date</span>();
+    <span class="keyword">var</span> currentTime = datum.getTime() ;
+    <span class="keyword">var</span> deleteTime = currentTime + <span class="number">60000</span>;
+    res.end(image, <span class="string">'binary'</span>);
+    <span class="keyword">var</span> url_parts = url.parse(req.url, <span class="literal">true</span>);
+    <span class="keyword">var</span> query = url_parts.query;
+    <span class="keyword">var</span> b = <span class="keyword">new</span> Buffer(<span class="string">""</span>+query.d, <span class="string">'base64'</span>);
+    <span class="keyword">var</span> s = b.toString();
+    <span class="keyword">var</span> o = <span class="built_in">JSON</span>.parse(s);
     o.timestamp = currentTime;
-    o.pkey = &quot;&quot;+currentTime+&quot;_&quot;+o.clientid;
-    // stores value in global array
+    o.pkey = <span class="string">""</span>+currentTime+<span class="string">"_"</span>+o.clientid;
+    <span class="comment">// stores value in global array</span>
     req.app.locals.datastore.push(o); 
-    ...</code><br>}<br>I build a small tracking-library which you can integrate in your website to track some<br>features. The lib has on function which is “track(JSON-Object)”.</p>
+    ...
+
+}
+</code></pre>
+<p>I build a small tracking-library which you can integrate in your website to track some<br>features. The lib has on function which is “track(JSON-Object)”.</p>
 
       
     </div>
