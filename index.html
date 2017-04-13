@@ -63,6 +63,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Simple-File-Transfer-With-OneMinuteServer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/13/Simple-File-Transfer-With-OneMinuteServer/" class="article-date">
+  <time datetime="2017-04-13T17:33:39.000Z" itemprop="datePublished">2017-04-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/13/Simple-File-Transfer-With-OneMinuteServer/">Simple-File-Transfer-With-OneMinuteServer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="The-Simple-File-Transfer-Java-Application"><a href="#The-Simple-File-Transfer-Java-Application" class="headerlink" title="The Simple-File-Transfer Java Application"></a>The Simple-File-Transfer Java Application</h1><h2 id="The-Idea"><a href="#The-Idea" class="headerlink" title="The Idea"></a>The Idea</h2><p>The idea is to use the OneMinuteServer to transfer files from A to B.<br>There are some special reasons why you use this instead of other solutions.</p>
+<ul>
+<li>It is easy to use. One Click, and it is working (If the Directory exists.)</li>
+<li>It´s using normal Http-Ports.</li>
+<li>The file is nowhrere stored in complete. Just parts for a minute on the OneMinuteServer.## How it works</li>
+<li>If you select a file to send, the file will be splitted in parts, each 1000 bytes. And send to the server, one by one. With a short delay. Maybe the transfer of the file last a few seconds, or minutes. Depending on the size. </li>
+<li>If you select Receive, the server is asked every few seconds, if there is a file available. If there is a file, the parts are fetched, one or more parts at a time. If the file is complete, it is written to the desination-directory.</li>
+</ul>
+<p>More than one person can receive at a time, and more than one can send.<br>For example, if you have 10 friends, you can send them all a file at once.<br>It´s important to have the same clientid, which is like a key on the server.</p>
+<p>With this simple version, you should not send and receive at the same time.<br>Next project will have more possibilities.</p>
+<h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p><img src="/images/simplefiletransfer.png" alt="Overview"></p>
+<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source-Code"></a>Source-Code</h3><p>Find it on github: <a href="https://github.com/hbreinecke/simple-file-transfer" target="_blank" rel="external">https://github.com/hbreinecke/simple-file-transfer</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hbreinecke.github.io/2017/04/13/Simple-File-Transfer-With-OneMinuteServer/" data-id="cj1gr3363000248pv12k1gej3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-like-web-analytics" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/03/28/like-web-analytics/" class="article-date">
@@ -114,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hbreinecke.github.io/2017/03/28/like-web-analytics/" data-id="cj0tz6u5e00053kpvguabn2xz" class="article-share-link">Share</a>
+      <a data-url="http://hbreinecke.github.io/2017/03/28/like-web-analytics/" data-id="cj1gr336i000648pv1a7w3wkz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html-Javascript-analyze/">Html Javascript analyze</a></li></ul>
@@ -158,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hbreinecke.github.io/2017/03/20/Web-Transfer-Javascript/" data-id="cj0tz6u5100023kpv705x9ab9" class="article-share-link">Share</a>
+      <a data-url="http://hbreinecke.github.io/2017/03/20/Web-Transfer-Javascript/" data-id="cj1gr336h000548pv68ybl9bi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Library/">Library</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tracking/">Tracking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Transfer/">Transfer</a></li></ul>
@@ -203,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://hbreinecke.github.io/2017/03/08/Server-1/" data-id="cj0tz6u4r00003kpv54xpukms" class="article-share-link">Share</a>
+      <a data-url="http://hbreinecke.github.io/2017/03/08/Server-1/" data-id="cj1gr335v000048pvfltczcbc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Server/">Server</a></li></ul>
@@ -246,7 +294,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
     </div>
   </div>
 
@@ -257,6 +305,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/04/13/Simple-File-Transfer-With-OneMinuteServer/">Simple-File-Transfer-With-OneMinuteServer</a>
+          </li>
         
           <li>
             <a href="/2017/03/28/like-web-analytics/">like-web-analytics</a>
